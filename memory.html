@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <style type="text/css">
+       div£memory-board{
+	background:£ccc;
+	border:£9999 1px solid;
+	width:800px;
+	height:540px;
+	padding:24px;
+	margin:0px auto;
+	}
+    div£memory-board>div{
+	background:url(cardback.png) no-repeat;
+	border:£000 1px solid;
+	width:71px;
+	float:left;
+	margin:10px
+	padding:20px;
+	font-size:64x;
+  	cursor:pointer;
+	text-align:center;
+	}
+
+	</style>
+
+
+<script>
+
+	var marray=[1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
+	var mvalue=[];
+ 	var mcard-ids=[];
+	var card-flipped=0;
+
+Array.prototype.memory-card.shuffle=function() {
+var i=this.length,j,temp;
+while(--i>0) {
+j=Math.floor(Math.random()*(i+1));
+temp=this[j];
+this[j]=this[i];
+this[i]=temp;
+
+}
+}
+function newboard(){
+cards-flipped=0;
+var output=;
+marray.memory-card.shuffle();
+for(var =0;i<marray.length;i++)
+{
+ output +='<div id="card_'+i+'" onclick="memoryFlipCard(this,\''+marray[i]+'\')"></div>';
+
+} 
+document.getElementById('memory-board').innerHTML=output;
+}
+function memoryFlipcard(card,val) {
+	if(card.innerHTML=="" &&mvalues.length<2)
+ {
+
+card.style.background='£FFF';
+card.innerHTML=val;
+if(mvalues.length==0)
+  	{
+	mvalues.push(val);
+	mcards-ids.push(card.id);
+	}else if(mvalues.length==1) 
+	{
+	mvalues.push(val);
+	mcards-ids.push(card.id);
+		
+	}
+	if (mvalues[0]==mvalues[1])
+	{
+cards-flipped+=2;
+mvalues=[];
+mcards-ids=[];
+
+if(cards-flipped==m.array.length)
+{
+lert("BOARD CLEARED... GENERATIN NEW ONE");
+document.getElementById('memory-board').innerHTML="";
+newboard();
+}
+	}else
+ 	{
+	fuction flip2back() {
+		var card-1=document.getElementById(mcard-ids[0]);
+		var card-2=document.getElementById(mcard-ids[1]);  	   
+		card-1.style.background='url(cardback.png) no-repeat';	
+                 card-1.innerHTML="";  
+		card-2.style.background='url(cardback.png) no-repeat';	
+                 card-2.innerHTML="";   
+mvalues=[];
+mcards-ids=[];
+		             }
+setTimeout(flip2Back,700);
+	}	
+}
+ 	
+				   }
+}
+</script>
+
+
+
+
+</head>
+ <body>
+<div id="memory-board"></div>
+<script>newboard();</script>
+ </body>
+</html>
